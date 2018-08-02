@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+@font-face {
+    font-family: 'MarketSaturday';
+    src: font-url('MarketSaturday.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#navbar-primary .navbar-nav {
+  margin: 25px 0px;
+  background: none;
+  > li {
+    padding: 0px 20px;
+  }
+}
+
+.font-market-saturday {
+    font-family: 'MarketSaturday'
+}

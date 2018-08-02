@@ -1,0 +1,17 @@
+// Place all the styles related to the default controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.parallax {
+    /* The image used */
+    background-image: image-url("wood.jpg");
+
+    /* Set a specific height */
+    height: 600px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
