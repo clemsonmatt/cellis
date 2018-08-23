@@ -1,0 +1,24 @@
+<% content_for :page_content_header do %>
+    Edit profile
+<% end %>
+
+<% content_for :page_content do %>
+    <%= bootstrap_form_for @user, url: {action: 'update'} do |f| %>
+        <div class="row">
+            <div class="col-md-6">
+                <%= f.text_field :first_name, :class => 'form-control', :placeholder => 'First name' %>
+                <%= f.text_field :last_name, :class => 'form-control', :placeholder => 'Last name' %>
+            </div>
+            <div class="col-md-6">
+                <%= f.text_field :email, :class => 'form-control' %>
+                <%= f.text_field :phone, :class => 'form-control', :placeholder => '(123) 456-7890' %>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-dark">
+            <i class="fas fa-check-circle"></i>
+            Save profile
+        </button>
+    <% end %>
+<% end %>
+
+<%= render 'profiles/layout' %>

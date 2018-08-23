@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     get '/about', action: :about, controller: 'default'
     get '/contact', action: :contact, controller: 'default'
 
+    # profile
+    get '/profile', action: :index, controller: 'profiles'
+    get '/profile/edit', action: :edit, controller: 'profiles'
+    patch '/profile/update', action: :update, controller: 'profiles'
+
     # sessions
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'
