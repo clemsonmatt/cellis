@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     get '/profile/edit', action: :edit, controller: 'profiles'
     patch '/profile/update', action: :update, controller: 'profiles'
 
+    # admin
+    namespace :manage do
+        resources :users
+    end
+
     # sessions
     get 'signup', to: 'users#new', as: 'signup'
     get 'login', to: 'sessions#new', as: 'login'
