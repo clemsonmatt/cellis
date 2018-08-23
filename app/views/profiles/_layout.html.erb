@@ -4,20 +4,21 @@
     <div class="row">
         <div class="col-md-4">
             <div class="text-center">
-                <h4>Matt Ellis</h4>
+                <% if @user.first_name && @user.last_name %>
+                    <h2><%= @user.first_name + ' ' + @user.last_name %></h2>
+                <% end %>
                 <hr>
-                <h6 class="text-muted"><%= @user.email %></h6>
-                <h6 class="text-muted">(864) 247-9619</h6>
+                <h6 class="text-dark"><%= @user.email %></h6>
+                <% if @user.phone %>
+                    <h6 class="text-dark"><%= @user.phone %></h6>
+                <% end %>
+                <span class="text-muted">Member since <%= @user.created_at.strftime('%m/%d/%y') %></span>
             </div>
             <hr>
 
             <ul class="list-group">
-                <a href="#" class="list-group-item list-group-item-light">
-                    Profile
-                </a>
-                <a href="#" class="list-group-item list-group-item-light">
-                    Orders
-                </a>
+                <%= link_to 'Orders', profile_path, :class => 'list-group-item list-group-item-light' %>
+                <%= link_to 'Edit profile', profile_edit_path, :class => 'list-group-item list-group-item-light' %>
                 <a href="#" class="list-group-item list-group-item-light">
                     Settings
                 </a>
@@ -28,6 +29,9 @@
             </ul>
         </div>
         <div class="col-md-8">
+            <h1 class="font-market-saturday-lg">
+                <%= yield :page_content_header %>
+            </h1>
             <%= yield :page_content %>
         </div>
     </div>
