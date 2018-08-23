@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-    before_action :logged_in?
+    before_action :require_logged_in?
 
     def index
     end

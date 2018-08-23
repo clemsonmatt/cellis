@@ -23,8 +23,8 @@
         <%= link_to("Contact", [:contact, @default], :class => 'nav-link') %>
       </li>
       <li class="nav-item">
-        <% if @user %>
-          <%= link_to 'Logout', logout_path, :class => 'nav-link' %>
+        <% if logged_in? %>
+          <%= link_to 'Profile', profile_path, :class => 'nav-link' %>
         <% else %>
           <%= link_to 'Login', login_path, :class => 'nav-link' %>
         <% end %>

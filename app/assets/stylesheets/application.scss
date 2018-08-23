@@ -37,6 +37,11 @@
     font-family: 'MarketSaturday';
 }
 
+.font-market-saturday-lg {
+  font-family: 'MarketSaturday';
+  font-size: 4.5em;
+}
+
 html, body {
    margin:0;
    padding:0;
@@ -79,4 +84,20 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   border-radius: 0px;
   padding: 25px;
+}
+
+.btn-group-justified {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  .btn,
+  .btn-group {
+    flex: 1;
+    .btn {
+      width: 100%;
+    }
+    .dropdown-menu {
+      left: auto;
+    }
+  }
 }

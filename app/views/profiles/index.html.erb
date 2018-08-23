@@ -1,3 +1,5 @@
-<div class="container" style="margin-top: 50px;">
+<% content_for :page_content do %>
     <%= @user.email %>
-</div>
+<% end %>
+
+<%= render 'profiles/layout' %>
