@@ -10,10 +10,20 @@
   </head>
 
   <body class="bg-light">
-    <%= render 'layouts/nav' %>
+      <div id="container">
+          <div class="bg-white">
+            <%= render 'layouts/nav' %>
+          </div>
 
-    <%= yield %>
+          <%= yield :header %>
 
-    <%= render 'layouts/footer' %>
+          <div id="body">
+              <%= yield %>
+          </div>
+
+          <div id="footer">
+              <%= render 'layouts/footer' %>
+          </div>
+      </div>
   </body>
 </html>
