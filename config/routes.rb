@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
     # admin
     namespace :manage do
-        resources :users
+        resources :users,
+            :designs
     end
 
     # sessions

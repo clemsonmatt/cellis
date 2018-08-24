@@ -1,0 +1,52 @@
+<% content_for :page_header do %>
+    Designs
+<% end %>
+
+<% content_for :sidebar do %>
+    <ul class="nav nav-sidebar">
+        <% sidebar_nav = {
+            'all': 'All',
+        } %>
+
+        <% sidebar_nav.each do |key, value| %>
+            <li class="active">
+                <a href="#">
+                    <%= value %>
+                </a>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Created</th>
+        <th>Active</th>
+        <th>
+            <%= link_to new_manage_design_path, :class => 'btn btn-success btn-sm float-right' do %>
+                <i class="fas fa-plus-circle"></i>
+                Add
+            <% end %>
+        </th>
+    </thead>
+    <tbody>
+        <% @designs.each do |design| %>
+            <tr>
+                <td><%= design.name %></td>
+                <td>$<%= design.price %></td>
+                <td><%= design.created_at.strftime('m/d/y') %></td>
+                <td><%= design.active ? 'Active' : 'Inactive' %></td>
+                <td>View</td>
+            </tr>
+        <% end %>
+
+
+        <% if @designs.count.zero? %>
+            <tr>
+                <td colspan="5">None</td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
