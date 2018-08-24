@@ -1,0 +1,21 @@
+<% content_for :page_header do %>
+    Users
+<% end %>
+
+<% content_for :sidebar do %>
+    <ul class="nav nav-sidebar">
+        <% sidebar_nav = {
+            'all': 'All',
+        } %>
+
+        <% sidebar_nav.each do |key, value| %>
+            <li class="active">
+                <a href="#">
+                    <%= value %>
+                </a>
+            </li>
+        <% end %>
+    </ul>
+<% end %>
+
+manage users
